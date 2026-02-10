@@ -93,6 +93,32 @@ keywords:
   - Cannot traverse all elements in one pass like linear structures.
   - Examples: trees, graphs.
 
+```mermaid
+flowchart TB
+    subgraph DS["Data Structures"]
+        direction TB
+        subgraph Linear["Linear"]
+            A["Arrays"]
+            LL["Linked Lists"]
+            S["Stacks"]
+            Q["Queues"]
+        end
+        subgraph NonLinear["Non-Linear"]
+            T["Trees"]
+            G["Graphs"]
+        end
+    end
+    style DS fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style Linear fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style NonLinear fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style A fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style LL fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style S fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style Q fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style T fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style G fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+```
+
 ### Question: What is a stack data structure? What are its applications?
 
 - A stack represents application state at a specific time.
@@ -118,6 +144,25 @@ keywords:
 - **isEmpty:** True if empty, else false.
 - **size:** Return stack size.
 
+```mermaid
+flowchart LR
+    subgraph Stack["Stack (LIFO)"]
+        direction TB
+        TOP["TOP"] --> E3["Element 3"]
+        E3 --> E2["Element 2"]
+        E2 --> E1["Element 1"]
+    end
+    PUSH["push()"] -->|"Add to top"| TOP
+    TOP -->|"Remove from top"| POP["pop()"]
+    style Stack fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style TOP fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style E3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style E2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style E1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style PUSH fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style POP fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+```
+
 ### Question: What is a queue data structure? What are its applications?
 
 - A queue is a linear data structure for systematic list storage.
@@ -137,6 +182,24 @@ keywords:
 - **rear:** Return rear element without removal.
 - **front:** Return front element without removal.
 - **size:** Return queue size.
+
+```mermaid
+flowchart LR
+    ENQ["enqueue()"] -->|"Add"| REAR
+    subgraph Queue["Queue (FIFO)"]
+        direction LR
+        REAR["REAR"] --- E3["Elem 3"] --- E2["Elem 2"] --- E1["Elem 1"] --- FRONT["FRONT"]
+    end
+    FRONT -->|"Remove"| DEQ["dequeue()"]
+    style Queue fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style REAR fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style FRONT fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style E3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style E2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style E1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style ENQ fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style DEQ fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+```
 
 ### Question: Differentiate between stack and queue.
 
@@ -320,6 +383,35 @@ pop(s):
   - Has header node at beginning.
   - Useful for repetitive operations like counting elements.
 
+```mermaid
+flowchart LR
+    subgraph SLL["Singly Linked List"]
+        direction LR
+        N1["Node 1"] --> N2["Node 2"] --> N3["Node 3"] --> NULL1["NULL"]
+    end
+    subgraph DLL["Doubly Linked List"]
+        direction LR
+        D1["Node 1"] <--> D2["Node 2"] <--> D3["Node 3"]
+    end
+    subgraph CLL["Circular Linked List"]
+        direction LR
+        C1["Node 1"] --> C2["Node 2"] --> C3["Node 3"] --> C1
+    end
+    style SLL fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style DLL fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style CLL fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style N1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style N2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style N3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style NULL1 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style D1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style D2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style D3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style C1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style C2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style C3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+```
+
 ### Question: Difference between array and linked list
 
 | Arrays | Linked Lists |
@@ -363,6 +455,32 @@ pop(s):
   - Search becomes **O(n)** instead of **O(1)**
 - Hashing algorithm selection matters.
 
+```mermaid
+flowchart LR
+    subgraph HM["HashMap with Chaining"]
+        direction TB
+        B0["Bucket 0"] --> V1["Value A"]
+        B1["Bucket 1"] --> V2["Value B"] --> V3["Value C"] --> V4["Value D"]
+        B2["Bucket 2"] --> NULL["NULL"]
+        B3["Bucket 3"] --> V5["Value E"]
+    end
+    K1["Key X"] -->|"hash()"| B1
+    K2["Key Y"] -->|"hash()"| B1
+    style HM fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style B0 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style B1 fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style B2 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style B3 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style V1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style V2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style V3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style V4 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style V5 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style NULL fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style K1 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style K2 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+```
+
 ### Question: Time complexity of `get()` and `put()` in HashMap
 
 - **O(1)**, assuming uniform bucket distribution by hash function.
@@ -400,6 +518,23 @@ pop(s):
   - Indexing and multilevel indexing
   - Search algorithm implementation
   - Organizing sorted data streams
+
+```mermaid
+flowchart TB
+    R(("8")) --> L(("3"))
+    R --> RR(("10"))
+    L --> LL(("1"))
+    L --> LR(("6"))
+    RR --> RRL(("9"))
+    RR --> RRR(("14"))
+    style R fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style L fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style RR fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style LL fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style LR fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style RRL fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style RRR fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+```
 
 ### Question: What are tree traversals?
 
@@ -489,6 +624,32 @@ void printPostorderTraversal(Node root)
   - Preorder: `[1, 2, 4, 5, 3]`
   - Postorder: `[4, 5, 2, 3, 1]`
 
+```mermaid
+flowchart TB
+    subgraph Tree["Binary Tree"]
+        N1(("1")) --> N2(("2"))
+        N1 --> N3(("3"))
+        N2 --> N4(("4"))
+        N2 --> N5(("5"))
+    end
+    subgraph Traversals["Traversal Orders"]
+        direction TB
+        IN["Inorder: Left → Root → Right"]
+        PRE["Preorder: Root → Left → Right"]
+        POST["Postorder: Left → Right → Root"]
+    end
+    style Tree fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style Traversals fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style N1 fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style N2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style N3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style N4 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style N5 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style IN fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style PRE fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style POST fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+```
+
 ### Question: What is deque and its types? Applications?
 
 - Deque allows insertions at both ends.
@@ -563,6 +724,35 @@ void printPostorderTraversal(Node root)
 - Con:
   - Edge existence query `u -> v` can be **O(V)** worst case.
 
+```mermaid
+flowchart LR
+    subgraph Graph["Graph"]
+        direction LR
+        A(("A")) --> B(("B"))
+        A --> C(("C"))
+        B --> C
+        B --> D(("D"))
+        C --> D
+    end
+    subgraph AdjList["Adjacency List"]
+        direction TB
+        LA["A"] --> LB1["B"] --> LC1["C"]
+        LB["B"] --> LC2["C"] --> LD1["D"]
+        LC["C"] --> LD2["D"]
+        LD["D"] --> NULL["NULL"]
+    end
+    style Graph fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style AdjList fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style A fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style B fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style C fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style D fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style LA fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style LB fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style LC fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style LD fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+```
+
 ### Question: Difference between BFS and DFS
 
 | Breadth First Search (BFS) | Depth First Search (DFS) |
@@ -576,6 +766,40 @@ void printPostorderTraversal(Node root)
 | Revisited nodes removed from queue | Visited nodes pushed/removed from stack when no nodes left |
 | No backtracking | Recursive with backtracking |
 | FIFO based | LIFO based |
+
+```mermaid
+flowchart LR
+    subgraph BFS["BFS - Level by Level"]
+        direction TB
+        B1(("1")) --> B2(("2"))
+        B1 --> B3(("3"))
+        B2 --> B4(("4"))
+        B2 --> B5(("5"))
+    end
+    subgraph DFS["DFS - Deep First"]
+        direction TB
+        D1(("1")) --> D2(("2"))
+        D1 --> D3(("5"))
+        D2 --> D4(("3"))
+        D2 --> D5(("4"))
+    end
+    BFS ---|"Uses Queue"| Q["FIFO"]
+    DFS ---|"Uses Stack"| S["LIFO"]
+    style BFS fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style DFS fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style B1 fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style B2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style B3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style B4 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style B5 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style D1 fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style D2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style D3 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style D4 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style D5 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style Q fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style S fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+```
 
 ### Question: What is AVL tree, operations, rotations, applications?
 
@@ -596,6 +820,29 @@ void printPostorderTraversal(Node root)
   - In-memory sets/dictionaries
   - Database applications with frequent lookups, fewer insertions/deletions
   - Improved searching scenarios
+
+```mermaid
+flowchart LR
+    subgraph LL["Left Rotation"]
+        direction TB
+        A1(("A")) --> B1(("B"))
+        B1 --> C1(("C"))
+    end
+    subgraph LL_After["After"]
+        direction TB
+        B2(("B")) --> A2(("A"))
+        B2 --> C2(("C"))
+    end
+    LL -->|"Rotate"| LL_After
+    style LL fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style LL_After fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style A1 fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style B1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style C1 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style A2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style B2 fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style C2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+```
 
 ### Question: What is B-tree? Applications?
 
@@ -673,6 +920,27 @@ void printPostorderTraversal(Node root)
   - Browser history
   - Spell checker
 
+```mermaid
+flowchart TB
+    ROOT(("root")) --> T(("t"))
+    ROOT --> A(("a"))
+    T --> TO(("o"))
+    A --> AN(("n"))
+    TO --> TOY["toy"]
+    TO --> TOP["top"]
+    AN --> ANT["ant"]
+    AN --> ANY["any"]
+    style ROOT fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style T fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style A fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style TO fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style AN fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style TOY fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style TOP fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style ANT fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style ANY fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+```
+
 ### Question: Define Red-Black Tree and applications
 
 - Red-Black Tree is self-balancing BST.
@@ -708,6 +976,31 @@ void printPostorderTraversal(Node root)
     - Key = page number
     - Value = address of corresponding queue node
 
+```mermaid
+flowchart TB
+    subgraph LRU["LRU Cache"]
+        direction TB
+        subgraph HM["HashMap"]
+            K1["Key 1"] --> P1["→ Node 1"]
+            K2["Key 2"] --> P2["→ Node 2"]
+            K3["Key 3"] --> P3["→ Node 3"]
+        end
+        subgraph DLL["Doubly Linked List"]
+            direction LR
+            HEAD["HEAD"] <--> N1["Node 1"] <--> N2["Node 2"] <--> N3["Node 3"] <--> TAIL["TAIL"]
+        end
+    end
+    HM ---|"O(1) lookup"| DLL
+    style LRU fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style HM fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style DLL fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style HEAD fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style TAIL fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style N1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style N2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style N3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+```
+
 ### Question: What is a heap data structure?
 
 - Heap is a special tree-based non-linear structure.
@@ -718,6 +1011,36 @@ void printPostorderTraversal(Node root)
 - Types:
   - **Max-Heap:** root has greatest value; recursively true for subtrees.
   - **Min-Heap:** root has smallest value; recursively true for subtrees.
+
+```mermaid
+flowchart TB
+    subgraph MaxHeap["Max-Heap"]
+        direction TB
+        MX1(("100")) --> MX2(("40"))
+        MX1 --> MX3(("50"))
+        MX2 --> MX4(("10"))
+        MX2 --> MX5(("15"))
+    end
+    subgraph MinHeap["Min-Heap"]
+        direction TB
+        MN1(("10")) --> MN2(("40"))
+        MN1 --> MN3(("50"))
+        MN2 --> MN4(("100"))
+        MN2 --> MN5(("80"))
+    end
+    style MaxHeap fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style MinHeap fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style MX1 fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style MX2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style MX3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style MX4 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style MX5 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style MN1 fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style MN2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style MN3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style MN4 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style MN5 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+```
 
 ---
 
