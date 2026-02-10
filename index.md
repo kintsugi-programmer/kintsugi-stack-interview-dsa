@@ -2809,3 +2809,138 @@ public void convertBinary(int num)
 - Selection depends on data size and application needs.
 - Interview focus:
   - Sorting in optimization and problem solving
+
+## Complete DSA Roadmap
+
+```mermaid
+flowchart TD
+    subgraph Title["DSA"]
+        A["Overview"]
+    end
+
+    subgraph Basic["Basic Data Structures"]
+        B1["Data Structures Definition"]
+        B2["Memory and Storage"]
+        B3["Linear Structures"]
+        B4["Stack and Queue"]
+        B5["Arrays"]
+        B6["Linked Lists"]
+        B7["HashMap"]
+        B8["Asymptotic Analysis"]
+    end
+
+    subgraph Advanced["Advanced Data Structures"]
+        C1["Binary Tree"]
+        C2["Binary Search Tree"]
+        C3["Tree Traversals"]
+        C4["Deque"]
+        C5["Priority Queue"]
+        C6["Graph Representations"]
+        C7["BFS and DFS"]
+        C8["AVL Tree"]
+        C9["B-Tree"]
+        C10["Segment Tree"]
+        C11["Trie"]
+        C12["Red-Black Tree"]
+        C13["LRU Cache"]
+        C14["Heap"]
+    end
+
+    subgraph Coding["Coding Interview Questions"]
+        D1["Array Problems"]
+        D2["Tree Problems"]
+        D3["Linked List Problems"]
+        D4["Graph Problems"]
+        D5["Stack Problems"]
+        D6["Advanced Problems"]
+    end
+
+    subgraph Python["Python DSA"]
+        E1["Python Features"]
+        E2["Built-in Functions"]
+        E3["Optimization Patterns"]
+    end
+
+    subgraph Assessment["Assessment"]
+        F1["Coding Problems Progress"]
+        F2["Data Structure MCQ"]
+        F3["Conceptual Revision"]
+    end
+
+    A --> B1
+    B1 --> B2
+    B2 --> B3
+    B3 --> B4
+    B4 --> B5
+    B5 --> B6
+    B6 --> B7
+    B7 --> B8
+    B8 --> C1
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+    C4 --> C5
+    C5 --> C6
+    C6 --> C7
+    C7 --> C8
+    C8 --> C9
+    C9 --> C10
+    C10 --> C11
+    C11 --> C12
+    C12 --> C13
+    C13 --> C14
+    C14 --> D1
+    D1 --> D2
+    D2 --> D3
+    D3 --> D4
+    D4 --> D5
+    D5 --> D6
+    D6 --> E1
+    E1 --> E2
+    E2 --> E3
+    E3 --> F1
+    F1 --> F2
+    F2 --> F3
+
+    style Title fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style Basic fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style Advanced fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style Coding fill:#1a1a2e,stroke:#4a4a6a,color:#e0e0e0
+    style Python fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style Assessment fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style A fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+    style B1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style B2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style B3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style B4 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style B5 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style B6 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style B7 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style B8 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style C1 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C2 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C3 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C4 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C5 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C6 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C7 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C8 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C9 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C10 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C11 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C12 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C13 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style C14 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style D1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style D2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style D3 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style D4 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style D5 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style D6 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style E1 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style E2 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style E3 fill:#16213e,stroke:#4a4a6a,color:#e0e0e0
+    style F1 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style F2 fill:#0f3460,stroke:#4a4a6a,color:#e0e0e0
+    style F3 fill:#e94560,stroke:#4a4a6a,color:#e0e0e0
+```
